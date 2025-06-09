@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ShebeirukuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ShebeirukuEntity" id="shebeirukuMap">
+        <result property="rukudanhao" column="rukudanhao"/>
+        <result property="shebeibianhao" column="shebeibianhao"/>
+        <result property="shebeimingcheng" column="shebeimingcheng"/>
+        <result property="shebeifenlei" column="shebeifenlei"/>
+        <result property="shuliang" column="shuliang"/>
+        <result property="goumaishangjia" column="goumaishangjia"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+        <result property="dizhi" column="dizhi"/>
+        <result property="rukuriqi" column="rukuriqi"/>
+        <result property="beizhu" column="beizhu"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ShebeirukuVO" >
+		SELECT * FROM shebeiruku  shebeiruku         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ShebeirukuVO" >
+		SELECT  shebeiruku.* FROM shebeiruku  shebeiruku 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ShebeirukuView" >
+
+		SELECT  shebeiruku.* FROM shebeiruku  shebeiruku 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ShebeirukuView" >
+		SELECT * FROM shebeiruku  shebeiruku <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
